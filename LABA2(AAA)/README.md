@@ -15,7 +15,7 @@
 	gpasswd -a user1 admins(дали user1 права на добавление и удаление пользователей в группу admins)
 	gpasswd -a user2 admins(дали user1 права на добавление и удаление пользователей в группу admins)
 	
-		(screenshot users_id.png)
+		![](users_id.png)(screenshot users_id.png)
  	roman@romanPC:~/Desktop$ id user1
 	  uid=1001(user1) gid=1001(user1) groups=1001(user1),1003(admins)
 	roman@romanPC:~/Desktop$ id user2
