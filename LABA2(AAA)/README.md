@@ -16,19 +16,18 @@
 	gpasswd -a user1 admins(дали user1 права на добавление и удаление пользователей в группу admins)
 	gpasswd -a user2 admins(дали user1 права на добавление и удаление пользователей в группу admins)
 	
-		![alt text](LABA2(AAA)/users_id.png)
 ![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/users_id.png)
- 	roman@romanPC:~/Desktop$ id user1
-	  uid=1001(user1) gid=1001(user1) groups=1001(user1),1003(admins)
-	roman@romanPC:~/Desktop$ id user2
-	  uid=1003(user2) gid=1003(admins) groups=1003(admins)
+ 	   roman@romanPC:~/Desktop$ id user1
+	   uid=1001(user1) gid=1001(user1) groups=1001(user1),1003(admins)
+	   roman@romanPC:~/Desktop$ id user2
+	   uid=1003(user2) gid=1003(admins) groups=1003(admins)
 
 	(*) Через usermod сделайте группу admins основной для  user1. Результат id приложить в README.md
 	roman@romanPC:~/Desktop$ sudo usermod -g admins user1 (usermod для добавления пользователя в группу)
 	roman@romanPC:~/Desktop$ id user1
 	uid=1001(user1) gid=1003(admins) groups=1003(admins)
 		(группа затералась, поэтому нужно использовать -a -g)
-		(screenshot usermod.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/usermod.png)
 
 3)Создать каталог от рута и дать права группе admins туда писать:
 	roman@romanPC:~/Desktop$ su -
@@ -44,6 +43,8 @@
 			newgrp admins - (сменить текущую группу пользователя)
 	
 			screenshot(chmod1.png) screenshot(chmod2.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/chmod1.png)			
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/chmod2.png)
 
 4)Создать пользователя user3 и дать ему права писать в /opt/uploads
 	.Создайте пользователя user3
@@ -59,6 +60,7 @@ su - user3
 touch /opt/upload/user3_file
 ls -l /opt/upload/user3_file
 		screenshot(setfacl.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/setfacl.png)
 
 5)Установить GUID флаг на директорию /opt/uploads:
 	.chmod g+s /opt/upload
@@ -74,13 +76,16 @@ ls -l /opt/upload/user3_file
 	Таким образом, назначили созданному файлу группу как у каталога
 	.Приложить ls -l /opt/upload  в  README.md
 		screenshot(GUID.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/GUID.png)
 
 6)Установить  SUID  флаг на выполняемый файл:
 	.В начале  попробуйте прочитать cat /etc/shadow  из под пользователя user3
 	.Установим suid бит на просмотрщик cat:
 	.Установить suid /bin/cat и прочитайте снова из под user3
 		screenshot(SUID1.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/SUID1.png)
 		screenshot(SUID2.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/SUID2.png)
 	.Объясните почему: 
 		Команда chmod u+s позволяет работать с файлом от имени владельца - root
 
@@ -94,7 +99,9 @@ ls -l /opt/upload/user3_file
 	rm -f  /opt/upload/user1_file_test
 
 		screenshot(sticky1.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/sticky1.png)
 		screenshot(sticky2.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/sticky2.png)
 
 (Еще одно важное усовершенствование касается использования sticky-бита в каталогах.
  Каталог с установленным sticky-битом означает, 
