@@ -4,6 +4,7 @@
 	
 	.Какие UID создались у пользователей?(посмотреть можно с помощью команды id или в файле /etc/passwd):
 	  ![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/UID_users.png)
+	  ![solarized palette](https://github.com/altercation/solarized/raw/master/img/solarized-palette.png)
 	  screenshot(UID_users.png)
 	  UID_user1 = 1001 (user1:x:1001:1001::/home/user1:/bin/sh)
 	  UID_user2 = 1003 (user2:x:1003:1003::/home/user2:/bin/sh)
