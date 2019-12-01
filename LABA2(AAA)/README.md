@@ -42,7 +42,7 @@
 	(*) попробуйте сменить текущую группу пользователя  newgrp admins у пользователя user2 и создайте еще файл
 			newgrp admins - (сменить текущую группу пользователя)
 	
-			screenshot(chmod1.png) screenshot(chmod2.png)
+			
 ![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/chmod1.png)			
 ![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/chmod2.png)
 
@@ -75,16 +75,16 @@ ls -l /opt/upload/user3_file
 		устанавливается как владелец группы для этого файла. 
 	Таким образом, назначили созданному файлу группу как у каталога
 	.Приложить ls -l /opt/upload  в  README.md
-		screenshot(GUID.png)
+		
 ![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/GUID.png)
 
 6)Установить  SUID  флаг на выполняемый файл:
 	.В начале  попробуйте прочитать cat /etc/shadow  из под пользователя user3
 	.Установим suid бит на просмотрщик cat:
 	.Установить suid /bin/cat и прочитайте снова из под user3
-		screenshot(SUID1.png)
+		
 ![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/SUID1.png)
-		screenshot(SUID2.png)
+		
 ![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/SUID2.png)
 	.Объясните почему: 
 		Команда chmod u+s позволяет работать с файлом от имени владельца - root
@@ -98,9 +98,9 @@ ls -l /opt/upload/user3_file
 	su - user3
 	rm -f  /opt/upload/user1_file_test
 
-		screenshot(sticky1.png)
+		
 ![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/sticky1.png)
-		screenshot(sticky2.png)
+		
 ![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA2(AAA)/sticky2.png)
 
 (Еще одно важное усовершенствование касается использования sticky-бита в каталогах.
