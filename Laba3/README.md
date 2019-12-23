@@ -27,9 +27,9 @@
 	
 	.Часто нужно добавлять, удалять или изменять размер разделов, управлять их флагами или конвертировать файловые системы. 
 	Для этого в Linux есть достаточно различных инструментов как с графическим интерфейсом, так и консольных.(parted -l)
-
-		(screensh lsblk.png)
-
+		
+		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/lsblk.png)
+		
 #2)Создадим сжатую файловую систему для чтения squashfs:
 	 Когда создаются маленькие и встроенные Linux-системы, каждый байт запоминающего устройства (дискета, флэш-карта и т. д.) очень важен, 
 	поэтому сжатие используется везде, где возможно. Также, сжатые файловые системы часто используются для целей архивирования. 
@@ -45,9 +45,8 @@ Commands:
 	sudo mkdir /mnt/mai
 	sudo mount mai.sqsh /mnt/mai -t squashfs -o loop
 
-		(screenshot squashfs.png)
-
-
+		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/squashfs.png)
+		
 ## 3)Посмотрим информацию по файловым системам смонтированным в системе
 
 ```bash
@@ -59,7 +58,7 @@ mount
 * С какими опциями примонтирована файловая система в /  (rw,relatime,errors=remount-ro)
 * Какой размер файловой системы приментированной в /mnt/mai  (128K)
 
-		(screenshot FileSystem.png)
+		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/FileSystem.png)
 
 ---
 
@@ -98,7 +97,7 @@ free -h
 			После перезагрузки все данные, содержащиеся в Tmpfs, будут утеряны.
 * какая часть памяти изменялась?	((free, shared, buff, available) не swap и не та часть которая используется)
 
-		(screenshot free-h.png)
+		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/free-h.png)
 
 ---
 
@@ -149,7 +148,7 @@ smem
 ```
 * утилита работает какое то время, можно оставить ее в другом терминале
 
-			(screenshot smem.png)
+			![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/smem.png)
 
 ---
 
@@ -158,7 +157,9 @@ smem
 python myfork.py
 ```
 * в другом терминале  отследите порождение процессов
-		(screenshot zombie.png)
+		
+		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/zombie.png)
+		
 * отследите какие состояния вы видите у процессов:
 		статус запуска процесса файлa myfork.py = s
 		статус статус порожденных(child) процессов = zombie
@@ -180,9 +181,13 @@ python myfork.py
 ## 9)Научимся корректно завершать зомби процессы
 * запустим еще раз наш процесс
 * убьем процесс первого чайлда
-		screenshot killchild1.png
+		
+		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/killchild1.png)
+		
 * проверим его состояние  и убедимся что он зомби
-		screenshot child1.png
+		
+		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/child1.png)
+		
 * остановим основной процесс
 * расскоментируем строки в скрипте
 ```python
@@ -191,7 +196,9 @@ python myfork.py
 ```
 * поторим все еще раз
 * отследим корректное завершение чайлда
-		screenshot killchild2.png
+		
+		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/killchild2.png)
+		
 
 ---
 ## 10)Научимся убивать зомби процессы
@@ -200,7 +207,7 @@ python myfork.py
 gdb
 > attach <parent_PID>
 > call waitpid(zombie_PID, 0, 0) wait
-		screenshot error.png
+		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/error.png)
 > detach
 > quit
 ```
@@ -211,7 +218,7 @@ gdb
 cd /mnt/mai
 # в другом терминале
 sudo umount /mnt/mai
-		screenshot mount.png 
+		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/mount.png) 
 fuser -v /mnt/dir
 ```
 * Напишите какие процессы мешают размонтировать директорию
@@ -264,7 +271,7 @@ du -sh  ~/myfiles
 * через atop скажите какой  pid был у процесса
 * Проанализируйте нагрузку на диск через утилиты  iotop и iostat
 
-		(screenshot nabludenie.png)
+		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/nabludenie.png)
 
 
 
