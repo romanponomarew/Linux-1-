@@ -28,7 +28,7 @@
 	.Часто нужно добавлять, удалять или изменять размер разделов, управлять их флагами или конвертировать файловые системы. 
 	Для этого в Linux есть достаточно различных инструментов как с графическим интерфейсом, так и консольных.(parted -l)
 		
-		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/lsblk.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/lsblk.png)
 		
 #2)Создадим сжатую файловую систему для чтения squashfs:
 	 Когда создаются маленькие и встроенные Linux-системы, каждый байт запоминающего устройства (дискета, флэш-карта и т. д.) очень важен, 
@@ -45,7 +45,7 @@ Commands:
 	sudo mkdir /mnt/mai
 	sudo mount mai.sqsh /mnt/mai -t squashfs -o loop
 
-		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/squashfs.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/squashfs.png)
 		
 ## 3)Посмотрим информацию по файловым системам смонтированным в системе
 
@@ -58,7 +58,7 @@ mount
 * С какими опциями примонтирована файловая система в /  (rw,relatime,errors=remount-ro)
 * Какой размер файловой системы приментированной в /mnt/mai  (128K)
 
-		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/FileSystem.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/FileSystem.png)
 
 ---
 
@@ -97,7 +97,7 @@ free -h
 			После перезагрузки все данные, содержащиеся в Tmpfs, будут утеряны.
 * какая часть памяти изменялась?	((free, shared, buff, available) не swap и не та часть которая используется)
 
-		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/free-h.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/free-h.png)
 
 ---
 
@@ -148,7 +148,7 @@ smem
 ```
 * утилита работает какое то время, можно оставить ее в другом терминале
 
-			![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/smem.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/smem.png)
 
 ---
 
@@ -158,7 +158,7 @@ python myfork.py
 ```
 * в другом терминале  отследите порождение процессов
 		
-		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/zombie.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/zombie.png)
 		
 * отследите какие состояния вы видите у процессов:
 		статус запуска процесса файлa myfork.py = s
@@ -182,11 +182,11 @@ python myfork.py
 * запустим еще раз наш процесс
 * убьем процесс первого чайлда
 		
-		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/killchild1.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/killchild1.png)
 		
 * проверим его состояние  и убедимся что он зомби
 		
-		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/child1.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/child1.png)
 		
 * остановим основной процесс
 * расскоментируем строки в скрипте
@@ -197,7 +197,7 @@ python myfork.py
 * поторим все еще раз
 * отследим корректное завершение чайлда
 		
-		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/killchild2.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/killchild2.png)
 		
 
 ---
@@ -207,10 +207,11 @@ python myfork.py
 gdb
 > attach <parent_PID>
 > call waitpid(zombie_PID, 0, 0) wait
-		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/error.png)
+
 > detach
 > quit
 ```
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/error.png)
 
 ---
 ## 11)Проблемы при отмонтировании директории
@@ -218,9 +219,11 @@ gdb
 cd /mnt/mai
 # в другом терминале
 sudo umount /mnt/mai
-		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/mount.png) 
+
 fuser -v /mnt/dir
 ```
+
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/mount.png)
 * Напишите какие процессы мешают размонтировать директорию
 * посмотрите ```lsof -p <pid>``` этих процессов
 * убейте мешаюший процесс и размонтируйте директорию
@@ -271,7 +274,7 @@ du -sh  ~/myfiles
 * через atop скажите какой  pid был у процесса
 * Проанализируйте нагрузку на диск через утилиты  iotop и iostat
 
-		![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/nabludenie.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/Laba3/Screenshots/nabludenie.png)
 
 
 
