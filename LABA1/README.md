@@ -1,4 +1,5 @@
-1)
+1)Задание 1 – Написать сервис, который будет раз в 30 секунд мониторить лог на предмет наличия ключевого слова. Файл и слово должны задаваться в /etc/sysconfig
+
 .Для начала создаём файл с конфигурацией для сервиса в директории
 /etc/sysconfig - из неё сервис будет брать необходимые переменные(SentOS)
 
@@ -15,23 +16,52 @@ Systemd позволяет менять настройки сервисов бе
 
 		
 
-		screenshot(sysconfig.png)
+		screenshot(config_file(1).png)
 
 .Затем создаем /var/log/watchlog.log и пишем туда строки на своё усмотрение,
 плюс ключевое слово ‘ALERT’
-		screenshot(watchlog(1).png)
+		
+		screenshot(watchlog_log(2).png)
 
 .Создадим скрипт:
-		screenshot(script.png)
+		
+		screenshot(script(3).png)
 Команда logger отправляет лог в системный журнал
 
 
-.Создадим юнит для сервиса(/etc/systemd/system):
-		screenshot(Unit_Service.png)
+.Создадим юниты для сервиса и для таймера:
+		
+		screenshot(Units(5).png))
 
-Создадим юнит для таймера:
-		screenshot(Unit_Timer.png)
 
-Затем достаточно только стартануть timer:
+Затем достаточно только запустить timer:
 [root@nginx ~#] systemctl start watchlog.timer
+И убедиться в результате:
+[root@nginx ~#]tail -f /var/log/messages
+		
+		screenshot(start1(5,5).png)
+		screenshot(start2(5,8).png)
+
+
+2)Задание 2 – Из epel установить spawn-fcgi и переписать init-скрипт на unit-файл. Имя сервиса должно также называться.
+		
+		screenshot(task2.png)
+		
+		
+		screenshot(spawn-fcgi(6).png)
+		
+		Юнит-файл:
+		screenshot(Spawn-service(7)
+		screenshot(final2)
+		
+2)Задание 3 – Дополнить юнит-файл apache httpd возможностью запустить несколько инстансов сервера с разными конфигами.
+			
+		screenshot(httpd_service(8)
+		screenshot(environment)
+		
+		httpd_first(9)
+		httpd_second(10)
+		second_conf(11)
+		
+	
 
