@@ -16,22 +16,22 @@ Systemd позволяет менять настройки сервисов бе
 
 		
 
-		screenshot(config_file(1).png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA1/Screenshots/config_file(1).jpg)
 
 .Затем создаем /var/log/watchlog.log и пишем туда строки на своё усмотрение,
 плюс ключевое слово ‘ALERT’
 		
-		screenshot(watchlog_log(2).png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA1/Screenshots/watchlog_log(2).jpg)
 
 .Создадим скрипт:
 		
-		screenshot(script(3).png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA1/Screenshots/script(3).jpg)
 Команда logger отправляет лог в системный журнал
 
 
 .Создадим юниты для сервиса и для таймера:
 		
-		screenshot(Units(5).png))
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA1/Screenshots/Units(5).jpg)
 
 
 Затем достаточно только запустить timer:
@@ -39,29 +39,29 @@ Systemd позволяет менять настройки сервисов бе
 И убедиться в результате:
 [root@nginx ~#]tail -f /var/log/messages
 		
-		screenshot(start1(5,5).png)
-		screenshot(start2(5,8).png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA1/Screenshots/start1(5%2C5).png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA1/Screenshots/start2(5%2C8).png)
 
 
 2)Задание 2 – Из epel установить spawn-fcgi и переписать init-скрипт на unit-файл. Имя сервиса должно также называться.
 		
-		screenshot(task2.png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA1/Screenshots/2task.png)
 		
 		
-		screenshot(spawn-fcgi(6).png)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA1/Screenshots/spawn-fcgi(6).jpg)
 		
-		Юнит-файл:
-		screenshot(Spawn-service(7)
-		screenshot(final2)
+Юнит-файл:
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA1/Screenshots/Spawn-service(7).jpg)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA1/Screenshots/final2.png)
 		
 2)Задание 3 – Дополнить юнит-файл apache httpd возможностью запустить несколько инстансов сервера с разными конфигами.
 			
-		screenshot(httpd_service(8)
-		screenshot(environment)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA1/Screenshots/httpd_service(8).jpg)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA1/Screenshots/environment.png)
 		
-		httpd_first(9)
-		httpd_second(10)
-		second_conf(11)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA1/Screenshots/httpd_first(9).jpg)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA1/Screenshots/httpd_second(10).jpg)
+![Alt text](https://github.com/romanponomarew/Linux-1-/blob/master/LABA1/Screenshots/second_conf(11).jpg)
 		
 	
 
